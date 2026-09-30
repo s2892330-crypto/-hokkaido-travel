@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#e8f1f5">
+
+<title>北海道 7 日旅行 V4</title>
+
+<style>
+*{box-sizing:border-box}
+:root{
+ --blue:#416c86;
+ --blue2:#31586f;
+ --dark:#223845;
+ --muted:#70808b;
+ --line:#dce6eb;
+ --pale:#edf4f7;
+ --warn:#fff3dc;
+ --warnline:#e7c478;
+ --danger:#9a553f;
+ --green:#527566;
+}
+body{
+ margin:0;
+ background:#f5f8f9;
+ color:var(--dark);
+ font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;
+}
+.app{
+ max-width:760px;
+ margin:auto;
+ min-height:100vh;
+}
+header{
+ padding:22px 16px 14px;
+ background:linear-gradient(145deg,#e3f0f5,#fbfcfd);
+}
+h1{
+ margin:0;
+ font-size:21px;
+}
+header>p{
+ margin:5px 0 0;
+ color:var(--muted);
+ font-size:12px;
+}
+.tripstate{
+ margin-top:13px;
+ background:#ffffffc7;
+ border:1px solid var(--line);
+ border-radius:14px;
+ padding:11px 12px;
+}
+.tripstate small{
+ display:block;
+ color:var(--muted);
+ font-size:10px;
+}
+.tripstate b{
+ display:block;
+ margin-top:3px;
+ font-size:14px;
+ color:var(--blue2);
+}
+.flights{
+ display:flex;
+ gap:7px;
+ margin-top:8px;
+}
+.flights div{
+ flex:1;
+ background:#ffffffa8;
+ border:1px solid var(--line);
+ border-radius:11px;
+ padding:8px;
+ font-size:10px;
+}
+.flights b{
+ display:block;
+ margin-top:2px;
+ font-size:11px;
+}
+nav{
+ position:sticky;
+ top:0;
+ z-index:20;
+ display:flex;
+ gap:6px;
+ overflow:auto;
+ padding:9px;
+ background:#fbfcfcf2;
+ backdrop-filter:blur(10px);
+ border-bottom:1px solid var(--line);
+}
+nav button{
+ min-width:58px;
+ border:1px solid var(--line);
+ background:white;
+ color:var(--blue);
+ border-radius:11px;
+ padding:7px;
+ font-weight:800;
+}
+nav button small{
+ display:block;
+ font-size:9px;
+ margin-top:1px;
+}
+nav button.on{
+ background:var(--blue);
+ color:white;
+}
+main{
+ padding:11px;
+}
+.day{
+ display:none;
+}
+.day.on{
+ display:block;
+}
+.daytitle{
+ margin:3px 2px 9px;
+}
+.daytitle small{
+ color:var(--blue);
+ font-weight:800;
+}
+.daytitle h2{
+ font-size:20px;
+ margin:3px 0;
+}
+.daytitle p{
+ margin:0;
+ color:var(--muted);
+ font-size:11px;
+}
+.smart{
+ background:linear-gradient(145deg,#416c86,#31586f);
+ color:white;
+ border-radius:18px;
+ padding:14px;
+ margin-bottom:9px;
+ box-shadow:0 4px 15px rgba(40,70,90,.12);
+}
+.smartlabel{
+ font-size:10px;
+ opacity:.8;
+ margin-bottom:3px;
+}
+.smart h3{
+ font-size:17px;
+ margin:0 0 3px;
+}
+.smart p{
+ font-size:11px;
+ margin:0;
+ opacity:.85;
+}
+.smartline{
+ height:1px;
+ background:#ffffff35;
+ margin:12px 0;
+}
+.nextrow{
+ display:grid;
+ grid-template-columns:1fr 125px;
+ gap:8px;
+ align-items:center;
+}
+.nextrow b{
+ display:block;
+ font-size:14px;
+}
+.nextrow small{
+ display:block;
+ opacity:.8;
+ margin-top:3px;
+ font-size:10px;
+}
+.nextrow a{
+ text-decoration:none;
+ background:white;
+ color:var(--blue2);
+ border-radius:10px;
+ padding:10px 7px;
+ text-align:center;
+ font-size:11px;
+ font-weight:900;
+}
+.alert{
+ border:1px solid var(--warnline);
+ background:var(--warn);
+ border-radius:15px;
+ padding:12px;
+ margin:9px 0;
+}
+.alert strong{
+ display:block;
+ font-size:14px;
+ color:#775626;
+}
+.alert p{
+ margin:4px 0 0;
+ font-size:11px;
+ line-height:1.55;
+ color:#765f3d;
+}
+.airport{
+ background:#eef2f8;
+ border-color:#bdc9db;
+}
+.airport strong{
+ color:#405875;
+}
+.airport p{
+ color:#586a80;
+}
+.hotelbar{
+ display:flex;
+ gap:7px;
+ margin:8px 0;
+ overflow:auto;
+}
+.hotelbar a{
+ white-space:nowrap;
+ text-decoration:none;
+ border:1px solid var(--line);
+ background:white;
+ color:var(--blue);
+ border-radius:10px;
+ padding:8px 10px;
+ font-size:10px;
+ font-weight:800;
+}
+.progress{
+ height:5px;
+ background:#e1e8eb;
+ border-radius:6px;
+ overflow:hidden;
+ margin:11px 2px 4px;
+}
+.progress i{
+ display:block;
+ width:0;
+ height:100%;
+ background:var(--green);
+ transition:.2s;
+}
+.status{
+ display:flex;
+ align-items:center;
+ font-size:10px;
+ color:var(--muted);
+ margin:0 3px 8px;
+}
+.status button{
+ margin-left:auto;
+ border:0;
+ background:none;
+ color:var(--blue);
+ font-size:10px;
+}
+.stop{
+ display:grid;
+ grid-template-columns:24px 32px 1fr;
+ gap:7px;
+ align-items:start;
+ background:white;
+ border:1px solid var(--line);
+ border-radius:14px;
+ padding:11px;
+ margin:7px 0;
+}
+.stop.current{
+ border:2px solid var(--blue);
+ box-shadow:0 3px 12px rgba(50,90,115,.10);
+}
+.check{
+ width:19px;
+ height:19px;
+ border:1px solid #b8c8d0;
+ border-radius:50%;
+ font-size:0;
+ text-align:center;
+ cursor:pointer;
+}
+.stop.done{
+ opacity:.5;
+}
+.stop.done .check{
+ background:var(--green);
+ color:white;
+ font-size:12px;
+ padding-top:1px;
+}
+.ico{
+ font-size:19px;
+}
+.stop small,
+.stop b,
+.stop p{
+ display:block;
+}
+.stop small{
+ font-size:10px;
+ color:var(--blue);
+ font-weight:800;
+}
+.stop b{
+ font-size:14px;
+ margin-top:2px;
+}
+.stop p{
+ font-size:11px;
+ color:var(--muted);
+ margin:3px 0 7px;
+ line-height:1.4;
+}
+.badge{
+ display:inline-block;
+ background:#f6f0df;
+ color:#765d27;
+ border-radius:6px;
+ padding:4px 6px;
+ font-size:9px;
+ margin:0 0 7px;
+}
+.actions{
+ display:flex;
+ gap:6px;
+ flex-wrap:wrap;
+}
+.actions a{
+ text-decoration:none;
+ background:var(--pale);
+ color:#315b72;
+ border-radius:8px;
+ padding:7px 10px;
+ font-size:10px;
+ font-weight:800;
+}
+.actions a.go{
+ background:var(--blue);
+ color:white;
+}
+footer{
+ padding:6px 15px 30px;
+ color:var(--muted);
+ font-size:10px;
+ line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+<h1>北海道自駕 7 日｜旅行行動地圖 V4</h1>
+<p>2026/10/07–10/13 · 旅行現場智慧版</p>
+
+<div class="tripstate">
+<small>TRIP STATUS</small>
+<b id="tripStatus">正在判斷旅行日期…</b>
+</div>
+
+<div class="flights">
+<div>
+✈️ 去程
+<b>10/07 CI0130 · 13:35</b>
+</div>
+<div>
+✈️ 回程
+<b>10/13 CI0131 · 15:05</b>
+</div>
+</div>
+</header>
+
+<nav id="tabs"></nav>
+
+<main id="main"></main>
+
+<footer>
+10/07～10/11 自駕；還車後改以地鐵、巴士與步行。
+完成狀態只儲存在目前裝置。
+道路、交通、班次及營業狀況以旅行當日官方資訊與 Google Maps 為準。
+</footer>
+
+</div>
+
+<script>
+
+const tripYear=2026;
+
+const days=[
+
+{
+date:"10/07",
+week:"週三",
+title:"抵達・北廣島・小樽",
+hotel:["OMO5 Otaru","OMO5 Otaru by Hoshino Resorts"],
+stops:[
+["13:35","✈️","CI0130 抵達新千歲機場","New Chitose Airport","入境、領行李",""],
+["14:30","🚗","Nippon Rent-A-Car 取車","Nippon Rent-A-Car New Chitose Airport","接駁約 10～15 分；另留手續時間",""],
+["16:00","🛍️","三井 Outlet 札幌北廣島","Mitsui Outlet Park Sapporo-Kitahiroshima","購物；取車延誤時縮短或取消",""],
+["17:15","🏨","OMO5 Otaru","OMO5 Otaru by Hoshino Resorts","辦理入住",""],
+["18:40","🍽️","若鶏時代なると 本店","若鶏時代なると 本店 小樽","晚餐主選","備選：おたる政寿司 ぜん庵／おたる旭寿司"],
+["19:30","📷","小樽運河夜景","Otaru Canal","步行；依體力縮短",""]
+]
+},
+
+{
+date:"10/08",
+week:"週四",
+title:"小樽散步・旭川",
+hotel:["JR Inn Asahikawa","JR Inn Asahikawa"],
+stops:[
+["08:00","🍽️","早餐與退房","OMO5 Otaru by Hoshino Resorts","寄行李；午餐後再取車",""],
+["09:00","📷","小樽運河・大正硝子館・堺町通","Sakaimachi Street Otaru","依各店開門時間購物",""],
+["12:00","🍽️","小樽午餐・取行李","Otaru","不再加排遠程景點",""],
+["13:00","🚗","小樽 → 旭川","JR Inn Asahikawa","預留 2.5～3 小時，含休息",""],
+["16:00","🏨","JR Inn・AEON 購物","AEON Mall Asahikawa Station","入住、購物",""],
+["17:30","🍽️","炉端のユーカラ","炉端のユーカラ 旭川","出發前確認可訂位時間",""],
+["19:00","🌙","旭川站周邊","Asahikawa Station","散步、回飯店",""]
+]
+},
+
+{
+date:"10/09",
+week:"週五",
+title:"美瑛・青池・富良野",
+hotel:["Furano Natulux Hotel","Furano Natulux Hotel"],
+stops:[
+["08:40","🚗","旭川 → 美瑛","美瑛選果 本店","含取車、停車緩衝",""],
+["09:40","🛍️","美瑛選果 本店","美瑛選果 本店","依營業時間調整",""],
+["11:00","🍽️","Cafe Junpei","Cafe Junpei Biei","候位超過 30 分改附近定食",""],
+["12:00","📷","前往白金青池","Shirogane Blue Pond","預留車程與停車","Mapcode：349 568 888"],
+["13:35","📷","白鬚瀑布","Shirahige Waterfall Hokkaido","青池開車約 5～10 分",""],
+["14:15","🚗","前往富良野飯店","Furano Natulux Hotel","預留約 1 小時",""],
+["16:00","☕","森之時計","森の時計 富良野","12:00～20:00；最後點餐 19:00","四季彩之丘為彈性景點；若要去建議取代森之時計"],
+["18:00","🍽️","富良野晚餐","Furano","晚餐後回飯店","くまげら／唯我独尊／小玉家"]
+]
+},
+
+{
+date:"10/10",
+week:"週六",
+title:"金山湖・帶廣・十勝川",
+hotel:["十勝川溫泉第一飯店","Tokachigawa Onsen Daiichi Hotel"],
+stops:[
+["08:45","🚗","富良野 → 金山湖","Lake Kanayama Hokkaido","依導航調整",""],
+["09:40","📷","金山湖散步","Lake Kanayama Hokkaido","雨勢大可取消",""],
+["10:15","🚗","金山湖 → 帶廣","豚丼のとん田 帯広","預留約 2 小時",""],
+["12:15","🍽️","豚丼 とん田","豚丼のとん田 帯広","午餐主選","候位久：はなとかち／站前店"],
+["13:30","☕","六花亭帶廣本店","Rokkatei Obihiro Main Store","喫茶室最後點餐 16:30",""],
+["14:20","📷","前往十勝丘公園","Tokachigaoka Park","視天候縮短",""],
+["15:30","♨️","十勝川溫泉第一飯店","Tokachigawa Onsen Daiichi Hotel","入住後不再開車；溫泉與晚餐",""]
+]
+},
+
+{
+date:"10/11",
+week:"週日",
+title:"返回札幌・加油還車",
+hotel:["Tokyu Stay Sapporo Odori","Tokyu Stay Sapporo Odori"],
+special:"return",
+stops:[
+["07:00","🍽️","飯店早餐・退房","Tokachigawa Onsen Daiichi Hotel","連假移動日，準時出發",""],
+["08:00","🚗","十勝川 → 札幌","Tokyu Stay Sapporo Odori","預留約 4 小時，含休息與交通緩衝",""],
+["12:00","🧳","Tokyu Stay 寄行李","Tokyu Stay Sapporo Odori","若回程塞車，優先還車",""],
+["12:15","⛽","加滿油・Nippon 還車","Nippon Rent-A-Car Susukino","目標 13:00 完成；訂單截止 14:30",""],
+["13:00","🍛","GARAKU","Soup Curry GARAKU Sapporo","候位超過 30 分改其他湯咖哩／定食",""],
+["14:00","☕","BARISTART COFFEE","BARISTART COFFEE Sapporo","10:00～18:00",""],
+["15:00","🏨","Tokyu Stay Sapporo Odori","Tokyu Stay Sapporo Odori","入住、休息或附近購物",""],
+["18:00","🍽️","札幌市區晚餐","Odori Sapporo","晚餐後回飯店",""]
+]
+},
+
+{
+date:"10/12",
+week:"週一",
+title:"札幌市區散步與購物",
+hotel:["Tokyu Stay Sapporo Odori","Tokyu Stay Sapporo Odori"],
+stops:[
+["08:00","🍽️","Espresso D'Works 早餐","ESPRESSO D WORKS Sapporo","步行",""],
+["09:00","⛩️","北海道神宮・圓山公園","Hokkaido Jingu","地鐵＋步行",""],
+["11:00","🎓","北海道大學","Hokkaido University Sapporo","依體力縮短",""],
+["12:30","🍽️","札幌 Stellar Place","Sapporo Stellar Place","午餐、短暫購物；連假預留候位",""],
+["14:00","☕","北菓樓札幌本館","Kitakaro Sapporo Honkan","甜點先確認庫存",""],
+["15:30","🏛️","赤れんが庁舎","Former Hokkaido Government Office Sapporo","依現場開放時間",""],
+["16:30","🛍️","Pole Town・3COINS・狸小路","Tanukikoji Shopping Street Sapporo","購物時間自由增減",""],
+["18:30","🍽️","狸小路／大通晚餐","Tanukikoji Shopping Street Sapporo","北海道料理、居酒屋或定食",""]
+]
+},
+
+{
