@@ -1,39 +1,1575 @@
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>北海道旅行行動地圖 V4</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f6f8f9;color:#243946;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif}.app{max-width:760px;margin:auto;min-height:100vh}header{padding:20px 16px;background:linear-gradient(145deg,#e3f0f5,#fafcfd)}h1{font-size:21px;margin:0}header p{font-size:12px;color:#71818c;margin:5px 0 0}.flights{display:flex;gap:7px;margin-top:12px}.flights div{flex:1;background:#fff9;border:1px solid #dce6eb;border-radius:11px;padding:8px;font-size:11px}nav{position:sticky;top:0;z-index:5;display:flex;overflow:auto;gap:6px;padding:9px;background:#fbfcfcf2;backdrop-filter:blur(8px);border-bottom:1px solid #dce6eb}nav button{min-width:57px;border:1px solid #dce6eb;background:white;color:#416c86;border-radius:10px;padding:6px;font-weight:800}nav button small{display:block;font-size:9px}nav button.on{background:#416c86;color:white}main{padding:11px}.day{display:none}.day.on{display:block}.hero{position:relative;background:white;border:1px solid #dce6eb;border-radius:16px;padding:13px 155px 13px 13px;min-height:84px}.hero small{color:#416c86;font-weight:800}.hero h2{font-size:18px;margin:3px 0}.hero a{position:absolute;right:8px;top:8px;bottom:8px;width:140px;background:#416c86;color:white;text-decoration:none;border-radius:12px;padding:10px;font-size:10px;display:flex;flex-direction:column;justify-content:center}.hero a b{font-size:12px;margin-top:4px}.bar{height:5px;background:#e1e8eb;border-radius:5px;margin:12px 2px 4px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:#416c86;transition:.2s}.status{font-size:10px;color:#71818c;margin:0 3px 8px}.stop{display:grid;grid-template-columns:24px 32px 1fr;gap:7px;align-items:start;background:white;border:1px solid #dce6eb;border-radius:14px;padding:11px;margin:7px 0;cursor:pointer}.check{width:19px;height:19px;border:1px solid #b9c9d1;border-radius:50%;font-size:0;text-align:center}.stop.done{opacity:.55}.stop.done .check{background:#416c86;color:white;font-size:12px;padding-top:1px}.ico{font-size:19px}.stop small,.stop b,.stop p{display:block}.stop small{font-size:10px;color:#416c86;font-weight:800}.stop b{font-size:14px;margin-top:2px}.stop p{font-size:11px;color:#71818c;margin:3px 0 7px}.stop span{display:flex;gap:6px}.stop a{font-size:10px;text-decoration:none;background:#edf4f7;color:#315b72;padding:6px 9px;border-radius:7px;font-weight:800}.stop a.go{background:#416c86;color:white}footer{padding:4px 15px 25px;font-size:10px;color:#71818c;line-height:1.5}
-.tripStatus{margin-top:10px;background:#fff;border:1px solid #dce6eb;border-radius:12px;padding:9px 10px;font-size:11px;color:#416c86;font-weight:800}
-.specialAlert{margin:8px 0;padding:10px 11px;border-radius:12px;background:#fff3dc;border:1px solid #e7c478;font-size:11px;line-height:1.5;color:#6f572f}
-.specialAlert b{display:block;font-size:13px;margin-bottom:3px}
- 
-</style></head>
-<body><div class="app"><header><h1>北海道自駕 7 日｜旅行行動地圖 V4</h1><p>旅行現場智慧版 · 自動今日＋重要日提醒＋完成進度</p><div class="tripStatus" id="tripStatus">正在判斷旅行日期…</div><div class="flights"><div>去程<br><b>10/07 CI0130 · 13:35</b></div><div>回程<br><b>10/13 CI0131 · 15:05</b></div></div></header><nav><button id="t0" class="on" onclick="show(0)">D1<small>10/07</small></button><button id="t1" class="" onclick="show(1)">D2<small>10/08</small></button><button id="t2" class="" onclick="show(2)">D3<small>10/09</small></button><button id="t3" class="" onclick="show(3)">D4<small>10/10</small></button><button id="t4" class="" onclick="show(4)">D5<small>10/11</small></button><button id="t5" class="" onclick="show(5)">D6<small>10/12</small></button><button id="t6" class="" onclick="show(6)">D7<small>10/13</small></button></nav><main><section id="d0" class="day on"><div class="hero"><small>10/07 週三</small><h2>抵達・北廣島・小樽</h2><a href="https://www.google.com/maps/search/?api=1&query=New%20Chitose%20Airport" target="_blank">現在要去哪裡？<b>CI0130 抵達新千歲機場 →</b></a></div><div class="bar"><i id="bar0"></i></div><div class="status"><b id="ct0">0 / 6</b> 已完成</div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">✈️</div><div><small>13:35</small><b>CI0130 抵達新千歲機場</b><p>入境、領行李</p><span><a href="https://www.google.com/maps/search/?api=1&query=New%20Chitose%20Airport" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=New%20Chitose%20Airport" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">🚗</div><div><small>14:30</small><b>Nippon Rent-A-Car 取車</b><p>接駁約 10–15 分，另留手續時間</p><span><a href="https://www.google.com/maps/search/?api=1&query=Nippon%20Rent-A-Car%20New%20Chitose%20Airport" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=New%20Chitose%20Airport&destination=Nippon%20Rent-A-Car%20New%20Chitose%20Airport&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">🛍️</div><div><small>16:00</small><b>三井 Outlet 札幌北廣島</b><p>含 graniph；延誤可縮短</p><span><a href="https://www.google.com/maps/search/?api=1&query=Mitsui%20Outlet%20Park%20Sapporo-Kitahiroshima" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Nippon%20Rent-A-Car%20New%20Chitose%20Airport&destination=Mitsui%20Outlet%20Park%20Sapporo-Kitahiroshima&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">🏨</div><div><small>17:15</small><b>OMO5 Otaru</b><p>入住</p><span><a href="https://www.google.com/maps/search/?api=1&query=OMO5%20Otaru%20by%20Hoshino%20Resorts" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Mitsui%20Outlet%20Park%20Sapporo-Kitahiroshima&destination=OMO5%20Otaru%20by%20Hoshino%20Resorts&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>18:40</small><b>若鶏時代なると 本店</b><p>備選：政寿司 ぜん庵／旭寿司</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E8%8B%A5%E9%B6%8F%E6%99%82%E4%BB%A3%E3%81%AA%E3%82%8B%E3%81%A8%20%E6%9C%AC%E5%BA%97%20%E5%B0%8F%E6%A8%BD" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=OMO5%20Otaru%20by%20Hoshino%20Resorts&destination=%E8%8B%A5%E9%B6%8F%E6%99%82%E4%BB%A3%E3%81%AA%E3%82%8B%E3%81%A8%20%E6%9C%AC%E5%BA%97%20%E5%B0%8F%E6%A8%BD&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,0)"><div class="check">✓</div><div class="ico">📷</div><div><small>19:30</small><b>小樽運河夜景</b><p>依體力縮短</p><span><a href="https://www.google.com/maps/search/?api=1&query=Otaru%20Canal" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E8%8B%A5%E9%B6%8F%E6%99%82%E4%BB%A3%E3%81%AA%E3%82%8B%E3%81%A8%20%E6%9C%AC%E5%BA%97%20%E5%B0%8F%E6%A8%BD&destination=Otaru%20Canal&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d1" class="day "><div class="hero"><small>10/08 週四</small><h2>小樽散步・旭川</h2><a href="https://www.google.com/maps/search/?api=1&query=Sakaimachi%20Street%20Otaru" target="_blank">現在要去哪裡？<b>小樽運河・大正硝子館・堺町通 →</b></a></div><div class="bar"><i id="bar1"></i></div><div class="status"><b id="ct1">0 / 5</b> 已完成</div><div class="stop" onclick="done(this,1)"><div class="check">✓</div><div class="ico">📷</div><div><small>09:00</small><b>小樽運河・大正硝子館・堺町通</b><p>依開門時間購物</p><span><a href="https://www.google.com/maps/search/?api=1&query=Sakaimachi%20Street%20Otaru" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=Sakaimachi%20Street%20Otaru" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,1)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>12:00</small><b>小樽午餐、取行李</b><p>不再加排遠程景點</p><span><a href="https://www.google.com/maps/search/?api=1&query=Otaru" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Sakaimachi%20Street%20Otaru&destination=Otaru&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,1)"><div class="check">✓</div><div class="ico">🚗</div><div><small>13:00</small><b>小樽 → 旭川</b><p>預留 2.5–3 小時</p><span><a href="https://www.google.com/maps/search/?api=1&query=JR%20Inn%20Asahikawa" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Otaru&destination=JR%20Inn%20Asahikawa&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,1)"><div class="check">✓</div><div class="ico">🏨</div><div><small>16:00</small><b>JR Inn・AEON 購物</b><p>入住、購物</p><span><a href="https://www.google.com/maps/search/?api=1&query=AEON%20Mall%20Asahikawa%20Station" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=JR%20Inn%20Asahikawa&destination=AEON%20Mall%20Asahikawa%20Station&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,1)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>17:30</small><b>炉端のユーカラ</b><p>先確認訂位</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E7%82%89%E7%AB%AF%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%AB%E3%83%A9%20%E6%97%AD%E5%B7%9D" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=AEON%20Mall%20Asahikawa%20Station&destination=%E7%82%89%E7%AB%AF%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%AB%E3%83%A9%20%E6%97%AD%E5%B7%9D&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d2" class="day "><div class="hero"><small>10/09 週五</small><h2>美瑛・青池・富良野</h2><a href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%9C%AC%E5%BA%97" target="_blank">現在要去哪裡？<b>美瑛選果 本店 →</b></a></div><div class="bar"><i id="bar2"></i></div><div class="status"><b id="ct2">0 / 7</b> 已完成</div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">🛍️</div><div><small>09:40</small><b>美瑛選果 本店</b><p>依營業時間調整</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%9C%AC%E5%BA%97" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%9C%AC%E5%BA%97" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>11:00</small><b>Cafe Junpei</b><p>候位 &gt;30 分改附近定食</p><span><a href="https://www.google.com/maps/search/?api=1&query=Cafe%20Junpei%20Biei" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E7%BE%8E%E7%91%9B%E9%81%B8%E6%9E%9C%20%E6%9C%AC%E5%BA%97&destination=Cafe%20Junpei%20Biei&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">📷</div><div><small>12:40</small><b>白金青池</b><p>Mapcode 349 568 888</p><span><a href="https://www.google.com/maps/search/?api=1&query=Shirogane%20Blue%20Pond" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Cafe%20Junpei%20Biei&destination=Shirogane%20Blue%20Pond&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">📷</div><div><small>13:35</small><b>白鬚瀑布</b><p>指定區停車</p><span><a href="https://www.google.com/maps/search/?api=1&query=Shirahige%20Waterfall%20Hokkaido" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Shirogane%20Blue%20Pond&destination=Shirahige%20Waterfall%20Hokkaido&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">🏨</div><div><small>15:15</small><b>Furano Natulux Hotel</b><p>入住</p><span><a href="https://www.google.com/maps/search/?api=1&query=Furano%20Natulux%20Hotel" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Shirahige%20Waterfall%20Hokkaido&destination=Furano%20Natulux%20Hotel&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">☕</div><div><small>16:00</small><b>森之時計</b><p>最後點餐 19:00</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E6%A3%AE%E3%81%AE%E6%99%82%E8%A8%88%20%E5%AF%8C%E8%89%AF%E9%87%8E" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Furano%20Natulux%20Hotel&destination=%E6%A3%AE%E3%81%AE%E6%99%82%E8%A8%88%20%E5%AF%8C%E8%89%AF%E9%87%8E&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,2)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>18:00</small><b>富良野晚餐</b><p>くまげら／唯我独尊／小玉家</p><span><a href="https://www.google.com/maps/search/?api=1&query=Furano" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E6%A3%AE%E3%81%AE%E6%99%82%E8%A8%88%20%E5%AF%8C%E8%89%AF%E9%87%8E&destination=Furano&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d3" class="day "><div class="hero"><small>10/10 週六</small><h2>金山湖・帶廣・十勝川</h2><a href="https://www.google.com/maps/search/?api=1&query=Lake%20Kanayama%20Hokkaido" target="_blank">現在要去哪裡？<b>金山湖 →</b></a></div><div class="bar"><i id="bar3"></i></div><div class="status"><b id="ct3">0 / 5</b> 已完成</div><div class="stop" onclick="done(this,3)"><div class="check">✓</div><div class="ico">📷</div><div><small>09:40</small><b>金山湖</b><p>雨大可取消</p><span><a href="https://www.google.com/maps/search/?api=1&query=Lake%20Kanayama%20Hokkaido" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=Lake%20Kanayama%20Hokkaido" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,3)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>12:15</small><b>豚丼 とん田</b><p>備選：はなとかち／站前店</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E8%B1%9A%E4%B8%BC%E3%81%AE%E3%81%A8%E3%82%93%E7%94%B0%20%E5%B8%AF%E5%BA%83" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Lake%20Kanayama%20Hokkaido&destination=%E8%B1%9A%E4%B8%BC%E3%81%AE%E3%81%A8%E3%82%93%E7%94%B0%20%E5%B8%AF%E5%BA%83&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,3)"><div class="check">✓</div><div class="ico">☕</div><div><small>13:30</small><b>六花亭帶廣本店</b><p>喫茶室最後點餐 16:30</p><span><a href="https://www.google.com/maps/search/?api=1&query=Rokkatei%20Obihiro%20Main%20Store" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E8%B1%9A%E4%B8%BC%E3%81%AE%E3%81%A8%E3%82%93%E7%94%B0%20%E5%B8%AF%E5%BA%83&destination=Rokkatei%20Obihiro%20Main%20Store&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,3)"><div class="check">✓</div><div class="ico">📷</div><div><small>14:50</small><b>十勝丘公園</b><p>視天候縮短</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokachigaoka%20Park" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Rokkatei%20Obihiro%20Main%20Store&destination=Tokachigaoka%20Park&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,3)"><div class="check">✓</div><div class="ico">♨️</div><div><small>15:30</small><b>十勝川溫泉第一飯店</b><p>入住後不再開車</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokachigawa%20Onsen%20Daiichi%20Hotel" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tokachigaoka%20Park&destination=Tokachigawa%20Onsen%20Daiichi%20Hotel&travelmode=driving" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d4" class="day "><div class="hero"><small>10/11 週日</small><h2>札幌・加油還車</h2><a href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank">現在要去哪裡？<b>十勝川 → 札幌 →</b></a></div><div class="bar"><i id="bar4"></i></div><div class="status"><b id="ct4">0 / 6</b> 已完成</div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">🚗</div><div><small>08:00</small><b>十勝川 → 札幌</b><p>預留約 4 小時</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">🧳</div><div><small>12:00</small><b>Tokyu Stay 寄行李</b><p>塞車則優先還車</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tokyu%20Stay%20Sapporo%20Odori&destination=Tokyu%20Stay%20Sapporo%20Odori&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">⛽</div><div><small>12:15</small><b>加滿油・Nippon 還車</b><p>目標 13:00；截止 14:30</p><span><a href="https://www.google.com/maps/search/?api=1&query=Nippon%20Rent-A-Car%20Susukino" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tokyu%20Stay%20Sapporo%20Odori&destination=Nippon%20Rent-A-Car%20Susukino&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">🍛</div><div><small>13:00</small><b>GARAKU</b><p>候位 &gt;30 分改其他店</p><span><a href="https://www.google.com/maps/search/?api=1&query=Soup%20Curry%20GARAKU%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Nippon%20Rent-A-Car%20Susukino&destination=Soup%20Curry%20GARAKU%20Sapporo&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">☕</div><div><small>14:00</small><b>BARISTART COFFEE</b><p>10:00–18:00</p><span><a href="https://www.google.com/maps/search/?api=1&query=BARISTART%20COFFEE%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Soup%20Curry%20GARAKU%20Sapporo&destination=BARISTART%20COFFEE%20Sapporo&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,4)"><div class="check">✓</div><div class="ico">🏨</div><div><small>15:00</small><b>Tokyu Stay Sapporo Odori</b><p>入住</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=BARISTART%20COFFEE%20Sapporo&destination=Tokyu%20Stay%20Sapporo%20Odori&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d5" class="day "><div class="hero"><small>10/12 週一</small><h2>札幌散步與購物</h2><a href="https://www.google.com/maps/search/?api=1&query=ESPRESSO%20D%20WORKS%20Sapporo" target="_blank">現在要去哪裡？<b>Espresso D&#x27;Works →</b></a></div><div class="bar"><i id="bar5"></i></div><div class="status"><b id="ct5">0 / 7</b> 已完成</div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>08:00</small><b>Espresso D&#x27;Works</b><p>早餐</p><span><a href="https://www.google.com/maps/search/?api=1&query=ESPRESSO%20D%20WORKS%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=ESPRESSO%20D%20WORKS%20Sapporo" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">⛩️</div><div><small>上午</small><b>北海道神宮・圓山公園</b><p>地鐵＋步行</p><span><a href="https://www.google.com/maps/search/?api=1&query=Hokkaido%20Jingu" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=ESPRESSO%20D%20WORKS%20Sapporo&destination=Hokkaido%20Jingu&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">🎓</div><div><small>上午</small><b>北海道大學</b><p>依體力縮短</p><span><a href="https://www.google.com/maps/search/?api=1&query=Hokkaido%20University%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Hokkaido%20Jingu&destination=Hokkaido%20University%20Sapporo&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>中午</small><b>Stellar Place</b><p>午餐、購物</p><span><a href="https://www.google.com/maps/search/?api=1&query=Sapporo%20Stellar%20Place" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Hokkaido%20University%20Sapporo&destination=Sapporo%20Stellar%20Place&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">☕</div><div><small>下午</small><b>北菓樓札幌本館</b><p>甜點先確認庫存</p><span><a href="https://www.google.com/maps/search/?api=1&query=Kitakaro%20Sapporo%20Honkan" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Sapporo%20Stellar%20Place&destination=Kitakaro%20Sapporo%20Honkan&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">🏛️</div><div><small>下午</small><b>赤れんが庁舎</b><p>依現場開放</p><span><a href="https://www.google.com/maps/search/?api=1&query=Former%20Hokkaido%20Government%20Office%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Kitakaro%20Sapporo%20Honkan&destination=Former%20Hokkaido%20Government%20Office%20Sapporo&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,5)"><div class="check">✓</div><div class="ico">🛍️</div><div><small>晚間</small><b>Pole Town・3COINS・狸小路</b><p>購物、晚餐</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tanukikoji%20Shopping%20Street%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Former%20Hokkaido%20Government%20Office%20Sapporo&destination=Tanukikoji%20Shopping%20Street%20Sapporo&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section><section id="d6" class="day "><div class="hero"><small>10/13 週二</small><h2>二條市場・機場</h2><a href="https://www.google.com/maps/search/?api=1&query=Nijo%20Market%20Sapporo" target="_blank">現在要去哪裡？<b>二條市場海鮮早餐 →</b></a></div><div class="bar"><i id="bar6"></i></div><div class="status"><b id="ct6">0 / 6</b> 已完成</div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">🍽️</div><div><small>07:00</small><b>二條市場海鮮早餐</b><p>ながもり／大磯</p><span><a href="https://www.google.com/maps/search/?api=1&query=Nijo%20Market%20Sapporo" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/search/?api=1&query=Nijo%20Market%20Sapporo" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">☕</div><div><small>08:00</small><b>時計台ガーデンテラス</b><p>平日 08:00 開門</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E6%99%82%E8%A8%88%E5%8F%B0%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%83%86%E3%83%A9%E3%82%B9%20%E6%9C%AD%E5%B9%8C" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Nijo%20Market%20Sapporo&destination=%E6%99%82%E8%A8%88%E5%8F%B0%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%83%86%E3%83%A9%E3%82%B9%20%E6%9C%AD%E5%B9%8C&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">🧳</div><div><small>09:00</small><b>回飯店取行李、退房</b><p>確認護照、機票、行李</p><span><a href="https://www.google.com/maps/search/?api=1&query=Tokyu%20Stay%20Sapporo%20Odori" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E6%99%82%E8%A8%88%E5%8F%B0%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%83%86%E3%83%A9%E3%82%B9%20%E6%9C%AD%E5%B9%8C&destination=Tokyu%20Stay%20Sapporo%20Odori&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">🚌</div><div><small>09:35</small><b>薄野機場巴士站</b><p>09:59 班次；備用 10:09</p><span><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE%20%E5%8D%974%E8%A5%BF3%20%E7%A9%BA%E6%B8%AF%E9%80%A3%E7%B5%A1%E3%83%90%E3%82%B9" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=Tokyu%20Stay%20Sapporo%20Odori&destination=%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE%20%E5%8D%974%E8%A5%BF3%20%E7%A9%BA%E6%B8%AF%E9%80%A3%E7%B5%A1%E3%83%90%E3%82%B9&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">✈️</div><div><small>11:07</small><b>新千歲機場</b><p>步行至國際線</p><span><a href="https://www.google.com/maps/search/?api=1&query=New%20Chitose%20Airport%20International%20Terminal" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=%E3%81%99%E3%81%99%E3%81%8D%E3%81%AE%20%E5%8D%974%E8%A5%BF3%20%E7%A9%BA%E6%B8%AF%E9%80%A3%E7%B5%A1%E3%83%90%E3%82%B9&destination=New%20Chitose%20Airport%20International%20Terminal&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div><div class="stop" onclick="done(this,6)"><div class="check">✓</div><div class="ico">✈️</div><div><small>11:30</small><b>報到、托運、用餐</b><p>15:05 CI0131 起飛</p><span><a href="https://www.google.com/maps/search/?api=1&query=New%20Chitose%20Airport%20International%20Terminal" target="_blank" onclick="event.stopPropagation()">📍地圖</a><a class="go" href="https://www.google.com/maps/dir/?api=1&origin=New%20Chitose%20Airport%20International%20Terminal&destination=New%20Chitose%20Airport%20International%20Terminal&travelmode=transit" target="_blank" onclick="event.stopPropagation()">➜導航</a></span></div></div></section></main><footer>10/07–10/11 自駕；札幌還車後改搭地鐵／巴士／步行。行程卡完成狀態會保存在這台裝置的瀏覽器。道路、班次及營業狀況以當日官方資訊與導航為準。</footer></div>
-<script>
-function show(n){document.querySelectorAll('.day').forEach((x,i)=>x.classList.toggle('on',i==n));document.querySelectorAll('nav button').forEach((x,i)=>x.classList.toggle('on',i==n));}
-function key(d,i){return 'hk-v3-'+d+'-'+i}
-function update(d){let a=[...document.querySelectorAll('#d'+d+' .stop')],n=a.filter(x=>x.classList.contains('done')).length;document.getElementById('ct'+d).textContent=n+' / '+a.length;document.getElementById('bar'+d).style.width=(100*n/a.length)+'%'}
-function done(el,d){let a=[...document.querySelectorAll('#d'+d+' .stop')],i=a.indexOf(el);el.classList.toggle('done');localStorage.setItem(key(d,i),el.classList.contains('done')?'1':'0');update(d)}
-document.querySelectorAll('.day').forEach((sec,d)=>{[...sec.querySelectorAll('.stop')].forEach((el,i)=>{if(localStorage.getItem(key(d,i))==='1')el.classList.add('done')});update(d)})
- 
-function autoTripDay(){
- const now=new Date();
- const start=new Date(2026,9,7,0,0,0);
- const end=new Date(2026,9,13,23,59,59);
- const box=document.getElementById('tripStatus');
- if(now<start){
-   const left=Math.ceil((start-now)/86400000);
-   box.textContent='距離北海道出發還有 '+left+' 天｜目前預覽 DAY 1';
-   return 0;
- }
- if(now>end){
-   box.textContent='北海道 7 日旅程已結束｜仍可手動查看 DAY 1～7';
-   return 6;
- }
- if(now.getFullYear()===2026 && now.getMonth()===9 && now.getDate()>=7 && now.getDate()<=13){
-   const d=now.getDate()-7;
-   box.textContent='今天是 DAY '+(d+1)+'｜'+days[d][1]+'｜已自動切換今日行程';
-   return d;
- }
- box.textContent='北海道旅行預覽模式';
- return 0;
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#416c86">
+
+<title>北海道自駕 7 日｜旅行行動地圖 V4</title>
+
+<style>
+*{
+  box-sizing:border-box;
 }
-show(autoTripDay());
-</script></body></html>
+
+:root{
+  --blue:#416c86;
+  --blue2:#31586f;
+  --dark:#243946;
+  --muted:#71818c;
+  --line:#dce6eb;
+  --pale:#edf4f7;
+  --green:#527566;
+  --warn:#fff3dc;
+  --warnline:#e7c478;
+}
+
+body{
+  margin:0;
+  background:#f6f8f9;
+  color:var(--dark);
+  font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Segoe UI",sans-serif;
+}
+
+.app{
+  max-width:760px;
+  margin:auto;
+  min-height:100vh;
+}
+
+header{
+  padding:20px 16px 14px;
+  background:linear-gradient(145deg,#e3f0f5,#fafcfd);
+}
+
+h1{
+  font-size:21px;
+  margin:0;
+}
+
+header p{
+  font-size:12px;
+  color:var(--muted);
+  margin:5px 0 0;
+}
+
+.trip-status{
+  margin-top:12px;
+  padding:10px 12px;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:12px;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+}
+
+.flights{
+  display:flex;
+  gap:7px;
+  margin-top:9px;
+}
+
+.flights div{
+  flex:1;
+  background:#ffffffbb;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:9px;
+  font-size:10px;
+}
+
+.flights b{
+  display:block;
+  font-size:11px;
+  margin-top:2px;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  gap:6px;
+  overflow:auto;
+  padding:9px;
+  background:#fbfcfcf2;
+  backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--line);
+}
+
+nav button{
+  min-width:58px;
+  border:1px solid var(--line);
+  background:white;
+  color:var(--blue);
+  border-radius:10px;
+  padding:7px;
+  font-weight:800;
+}
+
+nav button small{
+  display:block;
+  font-size:9px;
+  margin-top:1px;
+}
+
+nav button.on{
+  background:var(--blue);
+  color:white;
+}
+
+main{
+  padding:11px;
+}
+
+.day{
+  display:none;
+}
+
+.day.on{
+  display:block;
+}
+
+.day-title{
+  margin:3px 2px 9px;
+}
+
+.day-title small{
+  color:var(--blue);
+  font-weight:800;
+}
+
+.day-title h2{
+  font-size:19px;
+  margin:3px 0;
+}
+
+.day-title p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+}
+
+.smart{
+  background:linear-gradient(145deg,var(--blue),var(--blue2));
+  color:white;
+  padding:14px;
+  border-radius:17px;
+  margin:9px 0;
+}
+
+.smart-label{
+  font-size:10px;
+  opacity:.78;
+}
+
+.smart h3{
+  margin:3px 0;
+  font-size:16px;
+}
+
+.smart p{
+  margin:0;
+  font-size:11px;
+  opacity:.88;
+}
+
+.smart hr{
+  border:0;
+  border-top:1px solid #ffffff40;
+  margin:11px 0;
+}
+
+.smart a{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 12px;
+  border-radius:9px;
+  background:white;
+  color:var(--blue2);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:900;
+}
+
+.alert{
+  margin:8px 0;
+  padding:11px;
+  background:var(--warn);
+  border:1px solid var(--warnline);
+  border-radius:13px;
+  color:#70572f;
+  font-size:11px;
+  line-height:1.55;
+}
+
+.alert strong{
+  display:block;
+  font-size:13px;
+  margin-bottom:3px;
+}
+
+.hotel{
+  display:inline-block;
+  min-height:44px;
+  line-height:28px;
+  margin:2px 0 8px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:white;
+  color:var(--blue);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:800;
+}
+
+.progress{
+  height:5px;
+  background:#e2e9ec;
+  border-radius:5px;
+  overflow:hidden;
+  margin:7px 2px 4px;
+}
+
+.progress i{
+  display:block;
+  height:100%;
+  width:0;
+  background:var(--green);
+  transition:.2s;
+}
+
+.progress-text{
+  font-size:10px;
+  color:var(--muted);
+  margin:0 3px 8px;
+}
+
+.stop{
+  display:grid;
+  grid-template-columns:26px 31px 1fr;
+  gap:7px;
+  align-items:start;
+  padding:11px;
+  margin:7px 0;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+
+.stop.current{
+  border:2px solid var(--blue);
+  box-shadow:0 3px 12px rgba(50,90,115,.10);
+}
+
+.stop.done{
+  opacity:.5;
+}
+
+.check{
+  width:20px;
+  height:20px;
+  border:1px solid #b8c8d0;
+  border-radius:50%;
+  text-align:center;
+  font-size:0;
+  cursor:pointer;
+}
+
+.stop.done .check{
+  background:var(--green);
+  color:white;
+  font-size:12px;
+  padding-top:1px;
+}
+
+.ico{
+  font-size:19px;
+}
+
+.stop small{
+  display:block;
+  color:var(--blue);
+  font-size:10px;
+  font-weight:800;
+}
+
+.stop b{
+  display:block;
+  font-size:14px;
+  margin-top:2px;
+}
+
+.stop p{
+  margin:3px 0 7px;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.4;
+}
+
+.note{
+  display:inline-block;
+  margin-bottom:7px;
+  padding:5px 7px;
+  background:#fff3d9;
+  color:#755d2e;
+  border-radius:7px;
+  font-size:10px;
+}
+
+.actions{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.actions a,
+.actions button{
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  border-radius:8px;
+  padding:8px 11px;
+  background:var(--pale);
+  color:#315b72;
+  text-decoration:none;
+  font-size:10px;
+  font-weight:800;
+}
+
+.actions a.go{
+  background:var(--blue);
+  color:white;
+}
+
+footer{
+  padding:8px 15px 30px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <h1>北海道自駕 7 日｜旅行行動地圖 V4</h1>
+  <p>2026/10/07–10/13 · 小樽・旭川・美瑛・富良野・十勝・札幌</p>
+
+  <div class="trip-status" id="tripStatus">
+    正在判斷旅行日期…
+  </div>
+
+  <div class="flights">
+    <div>
+      ✈️ 去程
+      <b>10/07｜CI0130｜13:35 抵達新千歲</b>
+    </div>
+
+    <div>
+      ✈️ 回程
+      <b>10/13｜CI0131｜15:05 新千歲起飛</b>
+    </div>
+  </div>
+</header>
+
+<nav id="tabs"></nav>
+
+<main id="main"></main>
+
+<footer>
+10/07～10/11 自駕；札幌還車後改用地鐵／巴士／步行。
+完成進度只儲存在目前裝置。
+道路、交通、班次及營業狀況請以旅行當日官方資訊與 Google Maps 為準。
+</footer>
+
+</div>
+
+<script>
+
+const tripYear = 2026;
+
+const days = [
+
+{
+  date:"10/07",
+  week:"週三",
+  title:"抵達・北廣島・小樽",
+  hotel:"OMO5 Otaru by Hoshino Resorts",
+
+  stops:[
+
+    {
+      time:"13:35",
+      icon:"✈️",
+      name:"CI0130 抵達新千歲機場",
+      query:"New Chitose Airport",
+      note:"航班抵達後辦理入境、領行李。"
+    },
+
+    {
+      time:"13:35–15:15",
+      icon:"🚗",
+      name:"租車櫃台、接駁與取車",
+      query:"Nippon Rent-A-Car New Chitose Airport",
+      note:"14:30 為預約時間；接駁約 10～15 分，另留手續時間。"
+    },
+
+    {
+      time:"15:15–16:00",
+      icon:"🚗",
+      name:"前往三井 Outlet 札幌北廣島",
+      query:"Mitsui Outlet Park Sapporo-Kitahiroshima",
+      note:"自駕；車程與停車合計預留約 45 分。"
+    },
+
+    {
+      time:"16:00–17:15",
+      icon:"🛍️",
+      name:"三井 Outlet 購物",
+      query:"Mitsui Outlet Park Sapporo-Kitahiroshima",
+      note:"可安排咖啡，含 graniph；若取車延誤就縮短或取消。"
+    },
+
+    {
+      time:"17:15–18:30",
+      icon:"🏨",
+      name:"前往小樽 OMO5、辦理入住",
+      query:"OMO5 Otaru by Hoshino Resorts",
+      note:"自駕；預留市區與停車時間。"
+    },
+
+    {
+      time:"18:40–19:30",
+      icon:"🍽️",
+      name:"若鶏時代なると 本店",
+      query:"若鶏時代なると 本店 小樽",
+      note:"小樽晚餐主選。",
+      extra:"備選：おたる政寿司 ぜん庵／おたる旭寿司"
+    },
+
+    {
+      time:"19:30–20:00",
+      icon:"📷",
+      name:"小樽運河夜景",
+      query:"Otaru Canal",
+      note:"步行；依體力縮短。"
+    }
+
+  ]
+},
+
+{
+  date:"10/08",
+  week:"週四",
+  title:"小樽散步・旭川",
+  hotel:"JR Inn Asahikawa",
+
+  stops:[
+
+    {
+      time:"08:00–08:45",
+      icon:"🍽️",
+      name:"早餐與退房",
+      query:"OMO5 Otaru by Hoshino Resorts",
+      note:"飯店寄行李；午餐後再取車。"
+    },
+
+    {
+      time:"09:00–12:00",
+      icon:"📷",
+      name:"小樽運河・大正硝子館・堺町通",
+      query:"Sakaimachi Street Otaru",
+      note:"先逛運河，再依各店開門時間購物。"
+    },
+
+    {
+      time:"12:00–13:00",
+      icon:"🍽️",
+      name:"小樽午餐・取行李",
+      query:"Otaru",
+      note:"不再加排遠程景點。"
+    },
+
+    {
+      time:"13:00–16:00",
+      icon:"🚗",
+      name:"小樽 → 旭川",
+      query:"JR Inn Asahikawa",
+      note:"預留 2.5～3 小時，含休息與市區交通。"
+    },
+
+    {
+      time:"16:00–17:30",
+      icon:"🛍️",
+      name:"入住・AEON 購物",
+      query:"AEON Mall Asahikawa Station",
+      note:"AEON Mall 旭川站前購物。"
+    },
+
+    {
+      time:"17:30–19:00",
+      icon:"🍽️",
+      name:"炉端のユーカラ",
+      query:"炉端のユーカラ 旭川",
+      note:"先確認可訂位時間；額滿改車站周邊餐廳。"
+    },
+
+    {
+      time:"19:00–20:00",
+      icon:"🌙",
+      name:"旭川站周邊・回飯店",
+      query:"Asahikawa Station",
+      note:"咖啡可安排在下午購物時。"
+    }
+
+  ]
+},
+
+/* ===== V4 PART 1 END ===== */
+ /* ===== V4 PART 2 START ===== */
+
+{
+  date:"10/09",
+  week:"週五",
+  title:"美瑛・青池・富良野",
+  hotel:"Furano Natulux Hotel",
+
+  stops:[
+
+    {
+      time:"08:00–08:40",
+      icon:"🍽️",
+      name:"早餐・退房",
+      query:"JR Inn Asahikawa",
+      note:"飯店附近早餐。"
+    },
+
+    {
+      time:"08:40–09:40",
+      icon:"🚗",
+      name:"旭川 → 美瑛",
+      query:"美瑛選果 本店",
+      note:"含取車、停車緩衝；以導航確認。"
+    },
+
+    {
+      time:"09:40–10:45",
+      icon:"🛍️",
+      name:"美瑛選果 本店",
+      query:"美瑛選果 本店",
+      note:"依營業時間調整停留順序。"
+    },
+
+    {
+      time:"11:00–12:00",
+      icon:"🍽️",
+      name:"Cafe Junpei",
+      query:"Cafe Junpei Biei",
+      note:"11:00 開門；候位超過 30 分改附近定食。"
+    },
+
+    {
+      time:"12:00–13:35",
+      icon:"📷",
+      name:"白金青池",
+      query:"Shirogane Blue Pond",
+      note:"預留車程、停車與散步時間。",
+      extra:"Mapcode：349 568 888",
+      mapcode:"349 568 888"
+    },
+
+    {
+      time:"13:35–14:15",
+      icon:"📷",
+      name:"白鬚瀑布",
+      query:"Shirahige Waterfall Hokkaido",
+      note:"由青池開車約 5～10 分；指定區停車。"
+    },
+
+    {
+      time:"14:15–15:15",
+      icon:"🚗",
+      name:"白鬚瀑布 → 富良野飯店",
+      query:"Furano Natulux Hotel",
+      note:"車程預留約 1 小時。"
+    },
+
+    {
+      time:"15:15–16:00",
+      icon:"🏨",
+      name:"入住・前往新富良野王子區域",
+      query:"New Furano Prince Hotel",
+      note:"飯店至園區另留約 15～20 分車程與步行。"
+    },
+
+    {
+      time:"16:00–17:30",
+      icon:"☕",
+      name:"森之時計",
+      query:"森の時計 富良野",
+      note:"12:00～20:00；最後點餐 19:00。",
+      extra:"四季彩之丘為彈性景點；若一定要去，建議取代森之時計。"
+    },
+
+    {
+      time:"18:00–19:30",
+      icon:"🍽️",
+      name:"富良野晚餐",
+      query:"Furano",
+      note:"晚餐後回飯店。",
+      extra:"くまげら／唯我独尊／小玉家"
+    }
+
+  ]
+},
+
+{
+  date:"10/10",
+  week:"週六",
+  title:"金山湖・帶廣・十勝川溫泉",
+  hotel:"Tokachigawa Onsen Daiichi Hotel",
+
+  stops:[
+
+    {
+      time:"08:00–08:45",
+      icon:"🍽️",
+      name:"早餐・退房",
+      query:"Furano Natulux Hotel",
+      note:"早餐後準備出發。"
+    },
+
+    {
+      time:"08:45–09:40",
+      icon:"🚗",
+      name:"富良野 → 金山湖",
+      query:"Lake Kanayama Hokkaido",
+      note:"車程為規劃預留，依當日導航調整。"
+    },
+
+    {
+      time:"09:40–10:15",
+      icon:"📷",
+      name:"金山湖散步",
+      query:"Lake Kanayama Hokkaido",
+      note:"雨勢大可取消，提早前往帶廣。"
+    },
+
+    {
+      time:"10:15–12:15",
+      icon:"🚗",
+      name:"金山湖 → 帶廣",
+      query:"豚丼のとん田 帯広",
+      note:"預留約 2 小時；需要時中途休息。"
+    },
+
+    {
+      time:"12:15–13:15",
+      icon:"🍽️",
+      name:"豚丼 とん田",
+      query:"豚丼のとん田 帯広",
+      note:"豚丼午餐主選。",
+      extra:"候位久：はなとかち／站前店"
+    },
+
+    {
+      time:"13:30–14:20",
+      icon:"☕",
+      name:"六花亭帶廣本店",
+      query:"Rokkatei Obihiro Main Store",
+      note:"喫茶室與購物；最後點餐 16:30。"
+    },
+
+    {
+      time:"14:20–15:20",
+      icon:"📷",
+      name:"前往十勝川・十勝丘公園",
+      query:"Tokachigaoka Park",
+      note:"含約 30 分車程；公園視天候縮短。"
+    },
+
+    {
+      time:"15:30 起",
+      icon:"♨️",
+      name:"十勝川溫泉第一飯店",
+      query:"Tokachigawa Onsen Daiichi Hotel",
+      note:"入住後不再開車；溫泉與晚餐。",
+      extra:"晚餐優先飯店；若方案未含餐，事先確認溫泉區餐廳。"
+    }
+
+  ]
+},
+
+{
+  date:"10/11",
+  week:"週日",
+  title:"返回札幌・加油還車",
+  hotel:"Tokyu Stay Sapporo Odori",
+  special:"return",
+
+  stops:[
+
+    {
+      time:"07:00–08:00",
+      icon:"🍽️",
+      name:"飯店早餐・退房",
+      query:"Tokachigawa Onsen Daiichi Hotel",
+      note:"連假移動日，準時出發。"
+    },
+
+    {
+      time:"08:00–12:00",
+      icon:"🚗",
+      name:"十勝川 → 札幌市區",
+      query:"Tokyu Stay Sapporo Odori",
+      note:"預留約 4 小時，含休息與交通緩衝。"
+    },
+
+    {
+      time:"12:00–12:15",
+      icon:"🧳",
+      name:"Tokyu Stay 寄行李",
+      query:"Tokyu Stay Sapporo Odori",
+      note:"若回程塞車，取消此步驟並優先還車。"
+    },
+
+    {
+      time:"12:15–13:00",
+      icon:"⛽",
+      name:"加滿油・Nippon Rent-A-Car 還車",
+      query:"Nippon Rent-A-Car Susukino",
+      note:"目標 13:00 完成；租車訂單截止 14:30。",
+      extra:"14:30 是截止時間，不是建議抵達時間。"
+    },
+
+    {
+      time:"13:00–14:00",
+      icon:"🍛",
+      name:"GARAKU",
+      query:"Soup Curry GARAKU Sapporo",
+      note:"札幌午餐。",
+      extra:"候位超過 30 分改其他湯咖哩／定食。"
+    },
+
+    {
+      time:"14:00–15:00",
+      icon:"☕",
+      name:"BARISTART COFFEE",
+      query:"BARISTART COFFEE Sapporo",
+      note:"10:00～18:00；可選不同鮮奶。"
+    },
+
+    {
+      time:"15:00–17:30",
+      icon:"🏨",
+      name:"Tokyu Stay Sapporo Odori",
+      query:"Tokyu Stay Sapporo Odori",
+      note:"辦理入住、休息或附近購物。"
+    },
+
+    {
+      time:"18:00–20:00",
+      icon:"🍽️",
+      name:"札幌市區晚餐",
+      query:"Odori Sapporo",
+      note:"晚餐後回飯店。"
+    }
+
+  ]
+},
+
+{
+  date:"10/12",
+  week:"週一",
+  title:"札幌市區散步與購物",
+  hotel:"Tokyu Stay Sapporo Odori",
+
+  stops:[
+
+    {
+      time:"08:00",
+      icon:"🍽️",
+      name:"Espresso D'Works 早餐",
+      query:"ESPRESSO D WORKS Sapporo",
+      note:"步行前往早餐。"
+    },
+
+    {
+      time:"上午",
+      icon:"⛩️",
+      name:"北海道神宮・圓山公園",
+      query:"Hokkaido Jingu",
+      note:"地鐵＋步行；含往返站點步行時間。"
+    },
+
+    {
+      time:"上午",
+      icon:"🎓",
+      name:"北海道大學",
+      query:"Hokkaido University Sapporo",
+      note:"以校園散步為主，依體力縮短。"
+    },
+
+    {
+      time:"中午",
+      icon:"🍽️",
+      name:"札幌站午餐・短暫購物",
+      query:"Sapporo Stellar Place",
+      note:"Stellar Place 餐廳樓層；連假預留候位。"
+    },
+
+    {
+      time:"下午",
+      icon:"☕",
+      name:"北菓樓札幌本館",
+      query:"Kitakaro Sapporo Honkan",
+      note:"安排下午前段；想買的甜點先確認庫存。"
+    },
+
+    {
+      time:"下午",
+      icon:"🏛️",
+      name:"赤れんが庁舎",
+      query:"Former Hokkaido Government Office Sapporo",
+      note:"館內參觀依現場開放時間。"
+    },
+
+    {
+      time:"下午～晚間",
+      icon:"🛍️",
+      name:"Pole Town・3COINS・狸小路",
+      query:"Tanukikoji Shopping Street Sapporo",
+      note:"購物時間可自由增減。"
+    },
+
+    {
+      time:"晚間",
+      icon:"🍽️",
+      name:"狸小路／大通晚餐",
+      query:"Tanukikoji Shopping Street Sapporo",
+      note:"北海道料理、居酒屋或定食。"
+    },
+
+    {
+      time:"晚間",
+      icon:"🧳",
+      name:"最後採買・回飯店整理行李",
+      query:"Tokyu Stay Sapporo Odori",
+      note:"10/12 為日本國定假日，保持彈性。"
+    }
+
+  ]
+},
+
+/* ===== V4 PART 2 END ===== */
+/* ===== V4 PART 3 START ===== */
+
+{
+  date:"10/13",
+  week:"週二",
+  title:"二條市場・咖啡・機場",
+  hotel:"",
+  special:"airport",
+
+  stops:[
+
+    {
+      time:"07:00–08:00",
+      icon:"🍽️",
+      name:"二條市場海鮮早餐",
+      query:"Nijo Market Sapporo",
+      note:"ながもり／大磯；候位超過 20 分換店。"
+    },
+
+    {
+      time:"08:00–09:00",
+      icon:"☕",
+      name:"時計台ガーデンテラス",
+      query:"時計台ガーデンテラス 札幌",
+      note:"平日 08:00 開門；含約 15～20 分步行。"
+    },
+
+    {
+      time:"09:00–09:35",
+      icon:"🧳",
+      name:"回飯店・取行李・退房",
+      query:"Tokyu Stay Sapporo Odori",
+      note:"退房前確認護照、機票與行李。"
+    },
+
+    {
+      time:"09:35–09:45",
+      icon:"🚌",
+      name:"前往薄野機場巴士站",
+      query:"すすきの 南4西3 空港連絡バス",
+      note:"往機場：すすきの（南4西3），注意搭乘方向。"
+    },
+
+    {
+      time:"09:59–11:07",
+      icon:"🚌",
+      name:"機場巴士 → 新千歲國內線航廈",
+      query:"New Chitose Airport Domestic Terminal",
+      note:"主要班次 09:59 發車、11:07 抵達。",
+      extra:"備用班次：10:09 發車 → 11:17 抵達"
+    },
+
+    {
+      time:"11:07–11:30",
+      icon:"🚶",
+      name:"前往國際線航廈",
+      query:"New Chitose Airport International Terminal",
+      note:"另外保留航廈移動時間；巴士可能因交通延誤。"
+    },
+
+    {
+      time:"11:30–13:15",
+      icon:"✈️",
+      name:"報到・托運・用餐",
+      query:"New Chitose Airport International Terminal",
+      note:"先完成報到與托運，再安排餐飲購物。"
+    },
+
+    {
+      time:"13:15–15:05",
+      icon:"✈️",
+      name:"安檢・出境・候機",
+      query:"New Chitose Airport International Terminal",
+      note:"CI0131 15:05 新千歲起飛。"
+    }
+
+  ]
+}
+
+];
+
+/* ---------- BASIC HELPERS ---------- */
+
+const enc = value => encodeURIComponent(value);
+
+function mapURL(query){
+  return "https://www.google.com/maps/search/?api=1&query=" + enc(query);
+}
+
+function routeURL(origin,destination,dayIndex){
+
+  const mode = dayIndex <= 4 ? "driving" : "transit";
+
+  return "https://www.google.com/maps/dir/?api=1" +
+    "&origin=" + enc(origin) +
+    "&destination=" + enc(destination) +
+    "&travelmode=" + mode;
+}
+
+/* ---------- TIME ---------- */
+
+function firstTime(text){
+
+  const match = String(text).match(/(\d{1,2}):(\d{2})/);
+
+  if(!match){
+    return null;
+  }
+
+  return Number(match[1]) * 60 + Number(match[2]);
+}
+
+function currentMinutes(){
+
+  const now = new Date();
+
+  return now.getHours() * 60 + now.getMinutes();
+}
+
+/* ---------- TRAVEL DATE ---------- */
+
+function currentTripDay(){
+
+  const now = new Date();
+
+  if(now.getFullYear() !== tripYear){
+    return -1;
+  }
+
+  if(now.getMonth() !== 9){
+    return -1;
+  }
+
+  const date = now.getDate();
+
+  if(date < 7 || date > 13){
+    return -1;
+  }
+
+  return date - 7;
+}
+
+function initialDay(){
+
+  const now = new Date();
+
+  const start = new Date(2026,9,7,0,0,0);
+
+  const end = new Date(2026,9,13,23,59,59);
+
+  const status = document.getElementById("tripStatus");
+
+  if(now < start){
+
+    const daysLeft = Math.ceil(
+      (start.getTime() - now.getTime()) / 86400000
+    );
+
+    status.textContent =
+      "距離北海道出發還有 " +
+      daysLeft +
+      " 天｜目前預覽 DAY 1";
+
+    return 0;
+  }
+
+  if(now > end){
+
+    status.textContent =
+      "北海道 7 日旅程已結束｜仍可查看 DAY 1～DAY 7";
+
+    return 6;
+  }
+
+  const day = currentTripDay();
+
+  if(day >= 0){
+
+    status.textContent =
+      "今天是 DAY " +
+      (day + 1) +
+      "｜" +
+      days[day].date +
+      " " +
+      days[day].week;
+
+    return day;
+  }
+
+  status.textContent = "北海道旅行預覽模式";
+
+  return 0;
+}
+
+/* ---------- CURRENT / NEXT ---------- */
+
+function smartIndex(dayIndex){
+
+  if(currentTripDay() !== dayIndex){
+    return 0;
+  }
+
+  const now = currentMinutes();
+
+  let result = 0;
+
+  days[dayIndex].stops.forEach((stop,index)=>{
+
+    const value = firstTime(stop.time);
+
+    if(value !== null && now >= value){
+      result = index;
+    }
+
+  });
+
+  return result;
+}
+
+/* ---------- CLIPBOARD ---------- */
+
+async function copyText(value,button){
+
+  try{
+
+    if(navigator.clipboard && navigator.clipboard.writeText){
+
+      await navigator.clipboard.writeText(value);
+
+      const original = button.textContent;
+
+      button.textContent = "已複製";
+
+      setTimeout(()=>{
+        button.textContent = original;
+      },1200);
+
+      return;
+    }
+
+  }catch(error){
+    console.log("Clipboard unavailable");
+  }
+
+  window.prompt(
+    "請手動複製 Mapcode：",
+    value
+  );
+}
+
+/* ---------- BUILD UI ---------- */
+
+const tabs = document.getElementById("tabs");
+
+const main = document.getElementById("main");
+
+days.forEach((day,dayIndex)=>{
+
+  /* DAY TAB */
+
+  const tab = document.createElement("button");
+
+  tab.innerHTML =
+    "D" +
+    (dayIndex + 1) +
+    "<small>" +
+    day.date +
+    "</small>";
+
+  tab.addEventListener("click",()=>{
+    showDay(dayIndex);
+  });
+
+  tabs.appendChild(tab);
+
+  /* DAY PAGE */
+
+  const section = document.createElement("section");
+
+  section.className = "day";
+
+  section.id = "day" + dayIndex;
+
+  /* TITLE */
+
+  const title = document.createElement("div");
+
+  title.className = "day-title";
+
+  title.innerHTML =
+    "<small>DAY " +
+    (dayIndex + 1) +
+    " · " +
+    day.date +
+    " " +
+    day.week +
+    "</small>" +
+    "<h2>" +
+    day.title +
+    "</h2>" +
+    "<p>" +
+    (
+      day.hotel
+      ? "🏨 " + day.hotel
+      : "✈️ 今天返回台北"
+    ) +
+    "</p>";
+
+  section.appendChild(title);
+
+  /* SMART CURRENT / NEXT */
+
+  const currentIndex = smartIndex(dayIndex);
+
+  const current = day.stops[currentIndex];
+
+  const nextIndex = Math.min(
+    currentIndex + 1,
+    day.stops.length - 1
+  );
+
+  const next = day.stops[nextIndex];
+
+  const smart = document.createElement("div");
+
+  smart.className = "smart";
+
+  let smartHTML =
+    '<div class="smart-label">現在行程</div>' +
+    "<h3>" +
+    current.icon +
+    " " +
+    current.name +
+    "</h3>" +
+    "<p>" +
+    current.time +
+    " · " +
+    current.note +
+    "</p>" +
+    "<hr>" +
+    '<div class="smart-label">下一站</div>' +
+    "<h3>" +
+    next.icon +
+    " " +
+    next.name +
+    "</h3>" +
+    "<p>" +
+    next.time +
+    "</p>";
+
+  if(nextIndex !== currentIndex){
+
+    smartHTML +=
+      '<a target="_blank" href="' +
+      routeURL(
+        current.query,
+        next.query,
+        dayIndex
+      ) +
+      '">下一站導航 →</a>';
+
+  }else{
+
+    smartHTML +=
+      '<a target="_blank" href="' +
+      mapURL(current.query) +
+      '">開啟地圖 →</a>';
+
+  }
+
+  smart.innerHTML = smartHTML;
+
+  section.appendChild(smart);
+
+  /* DAY 5 RETURN ALERT */
+
+  if(day.special === "return"){
+
+    const alert = document.createElement("div");
+
+    alert.className = "alert";
+
+    alert.innerHTML =
+      "<strong>🚗 今天最重要：準時完成還車</strong>" +
+      "08:00 十勝川出發 → 札幌 → 加滿油 → " +
+      "Nippon Rent-A-Car Susukino。" +
+      "<br><b>目標：13:00 完成還車</b>" +
+      "<br><b>訂單截止：14:30</b>" +
+      "<br>若導航預估抵達時間延後，" +
+      "取消寄行李或購物，優先加油還車。";
+
+    section.appendChild(alert);
+  }
+
+  /* DAY 7 AIRPORT ALERT */
+
+  if(day.special === "airport"){
+
+    const alert = document.createElement("div");
+
+    alert.className = "alert";
+
+    alert.innerHTML =
+      "<strong>✈️ 今天是回國日</strong>" +
+      "<b>主要班次</b>" +
+      "09:59 薄野發車 → 11:07 新千歲國內線。" +
+      "<br><br><b>備用班次</b>" +
+      "10:09 薄野發車 → 11:17 新千歲國內線。" +
+      "<br><br>抵達後前往國際線航廈。" +
+      "<br><b>CI0131｜15:05 起飛</b>";
+
+    section.appendChild(alert);
+  }
+
+  /* HOTEL SHORTCUT */
+
+  if(day.hotel){
+
+    const hotel = document.createElement("a");
+
+    hotel.className = "hotel";
+
+    hotel.target = "_blank";
+
+    hotel.href = mapURL(day.hotel);
+
+    hotel.textContent = "🏨 回飯店";
+
+    section.appendChild(hotel);
+  }
+
+  /* PROGRESS */
+
+  const progress = document.createElement("div");
+
+  progress.className = "progress";
+
+  progress.innerHTML =
+    '<i id="progress' +
+    dayIndex +
+    '"></i>';
+
+  section.appendChild(progress);
+
+  const progressText = document.createElement("div");
+
+  progressText.className = "progress-text";
+
+  progressText.id =
+    "progressText" +
+    dayIndex;
+
+  section.appendChild(progressText);
+
+  /* STOPS */
+
+  day.stops.forEach((stop,stopIndex)=>{
+
+    const card = document.createElement("div");
+
+    card.className = "stop";
+
+    if(
+      currentTripDay() === dayIndex &&
+      stopIndex === currentIndex
+    ){
+      card.classList.add("current");
+    }
+
+    const storageKey =
+      "hokkaido-v4-" +
+      dayIndex +
+      "-" +
+      stopIndex;
+
+    if(localStorage.getItem(storageKey) === "1"){
+      card.classList.add("done");
+    }
+
+    /* CHECK */
+
+    const check = document.createElement("div");
+
+    check.className = "check";
+
+    check.textContent = "✓";
+
+    check.addEventListener("click",()=>{
+
+      card.classList.toggle("done");
+
+      if(card.classList.contains("done")){
+
+        localStorage.setItem(
+          storageKey,
+          "1"
+        );
+
+      }else{
+
+        localStorage.removeItem(
+          storageKey
+        );
+
+      }
+
+      updateProgress(dayIndex);
+    });
+
+    card.appendChild(check);
+
+    /* ICON */
+
+    const icon = document.createElement("div");
+
+    icon.className = "ico";
+
+    icon.textContent = stop.icon;
+
+    card.appendChild(icon);
+
+    /* CONTENT */
+
+    const content = document.createElement("div");
+
+    let contentHTML =
+      "<small>" +
+      stop.time +
+      "</small>" +
+      "<b>" +
+      stop.name +
+      "</b>" +
+      "<p>" +
+      stop.note +
+      "</p>";
+
+    if(stop.extra){
+
+      contentHTML +=
+        '<div class="note">' +
+        stop.extra +
+        "</div>";
+    }
+
+    contentHTML +=
+      '<div class="actions">' +
+      '<a target="_blank" href="' +
+      mapURL(stop.query) +
+      '">📍 地圖</a>';
+
+    let navigationURL;
+
+    if(stopIndex === 0){
+
+      navigationURL =
+        mapURL(stop.query);
+
+    }else{
+
+      navigationURL =
+        routeURL(
+          day.stops[stopIndex - 1].query,
+          stop.query,
+          dayIndex
+        );
+    }
+
+    contentHTML +=
+      '<a class="go" target="_blank" href="' +
+      navigationURL +
+      '">➜ 導航</a>';
+
+    contentHTML += "</div>";
+
+    content.innerHTML = contentHTML;
+
+    /* MAPCODE BUTTON */
+
+    if(stop.mapcode){
+
+      const actions =
+        content.querySelector(".actions");
+
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+
+      button.textContent =
+        "複製 Mapcode";
+
+      button.addEventListener(
+        "click",
+        ()=>{
+          copyText(
+            stop.mapcode,
+            button
+          );
+        }
+      );
+
+      actions.appendChild(button);
+    }
+
+    card.appendChild(content);
+
+    section.appendChild(card);
+
+  });
+
+  main.appendChild(section);
+
+});
+
+/* ---------- PROGRESS ---------- */
+
+function updateProgress(dayIndex){
+
+  const cards = [
+    ...document.querySelectorAll(
+      "#day" +
+      dayIndex +
+      " .stop"
+    )
+  ];
+
+  const completed =
+    cards.filter(
+      card =>
+        card.classList.contains("done")
+    ).length;
+
+  const total = cards.length;
+
+  const percentage =
+    total === 0
+    ? 0
+    : completed / total * 100;
+
+  document.getElementById(
+    "progress" + dayIndex
+  ).style.width =
+    percentage + "%";
+
+  document.getElementById(
+    "progressText" + dayIndex
+  ).textContent =
+    "今日進度：" +
+    completed +
+    " / " +
+    total;
+}
+
+/* ---------- DAY SWITCH ---------- */
+
+function showDay(dayIndex){
+
+  document
+    .querySelectorAll(".day")
+    .forEach((page,index)=>{
+
+      page.classList.toggle(
+        "on",
+        index === dayIndex
+      );
+
+    });
+
+  document
+    .querySelectorAll("nav button")
+    .forEach((button,index)=>{
+
+      button.classList.toggle(
+        "on",
+        index === dayIndex
+      );
+
+    });
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+/* ---------- INITIALIZE ---------- */
+
+days.forEach((day,index)=>{
+  updateProgress(index);
+});
+
+const startDay = initialDay();
+
+showDay(startDay);
+
+/* ===== V4 PART 3 END ===== */
+
+</script>
+
+</body>
+</html>
