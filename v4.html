@@ -1569,6 +1569,101 @@ showDay(startDay);
 
 /* ===== V4 PART 3 END ===== */
 
+/* ===== V4.1 SMART NEXT PATCH ===== */
+
+function refreshSmartNext(dayIndex){
+
+  const section = document.getElementById("day" + dayIndex);
+  if(!section) return;
+
+  const cards = [...section.querySelectorAll(".stop")];
+
+  let nextIndex = cards.findIndex(
+    card => !card.classList.contains("done")
+  );
+
+  const smart = section.querySelector(".smart");
+  if(!smart) return;
+
+  /* 全部完成 */
+  if(nextIndex === -1){
+
+    smart.innerHTML =
+      '<div class="smart-label">今日行程</div>' +
+      '<h3>✓ 今日行程已全部完成</h3>' +
+      '<p>可以休息或自由活動。</p>';
+
+    return;
+  }
+
+  const stop = days[dayIndex].stops[nextIndex];
+
+  let html =
+    '<div class="smart-label">下一個未完成行程</div>' +
+    '<h3>' +
+    stop.icon + " " + stop.name +
+    '</h3>' +
+    '<p>' +
+    stop.time + ' · ' + stop.note +
+    '</p>';
+
+  let navigationURL;
+
+  if(nextIndex === 0){
+
+    navigationURL = mapURL(stop.query);
+
+  }else{
+
+    const previous =
+      days[dayIndex].stops[nextIndex - 1];
+
+    navigationURL =
+      routeURL(
+        previous.query,
+        stop.query,
+        dayIndex
+      );
+  }
+
+  html +=
+    '<a target="_blank" href="' +
+    navigationURL +
+    '">下一站導航 →</a>';
+
+  smart.innerHTML = html;
+}
+
+
+/* 監聽所有完成按鈕 */
+
+document.querySelectorAll(".check").forEach(check=>{
+
+  check.addEventListener("click",()=>{
+
+    const section = check.closest(".day");
+
+    if(!section) return;
+
+    const dayIndex =
+      Number(section.id.replace("day",""));
+
+    setTimeout(()=>{
+      refreshSmartNext(dayIndex);
+    },0);
+
+  });
+
+});
+
+
+/* 網頁開啟時同步目前完成狀態 */
+
+days.forEach((day,index)=>{
+  refreshSmartNext(index);
+});
+
+/* ===== V4.1 SMART NEXT PATCH END ===== */
 </script>
 
 </body>
